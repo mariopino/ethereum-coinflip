@@ -58,7 +58,7 @@ UpdateContractInfo();
 CoinFlipEvent.watch(function(error, result) {
   if (!error) {
 	  
-	//console.log('Status Event Fired!');
+    //console.log('Status Event Fired!');
     //console.log(result);
     
 	// Avoid process a already processed Status Event
@@ -231,7 +231,7 @@ function UpdateGamesTable() {
 
 
 /**
-* Enable or disable sound
+* Enable / disable sound
 * @return {bool}
 */
 

@@ -1,6 +1,6 @@
 # Ethereum coin flip game
 
-Coin Flip Ethereum DApp, a simple casino game based on Ethereum blockchain.
+Coin Flip Ethereum DApp, a simple casino game based on Ethereum blockchain. Includes Solidity smart contract (CoinFlip.sol) and a bootstrap 4 based web interface to interact with it based on web3.js JS library.
 
 ## Demo
 
@@ -36,7 +36,7 @@ To run your own ethereum coin flip instance:
 
 ## TODO
 
-### UI
+### UI:
 
 * Implement DataTables (https://datatables.net) in Last Played Games.
 * Implement tabs, rename 'Last Played Games' to 'Last 10 Bets' and implement 'Wins' table.
@@ -54,10 +54,4 @@ and offer a link to reload the page.
 
 * Test the new maximum bet variable.
 * If a user send more than the maximum bet, play the max bet and return the rest to the user.
-
-
-### Next
-
-Try this random number generator function that doesn't need an oracle to do their job:
-
-https://gist.github.com/alexvandesande/259b4ffb581493ec0a1c
+* Try this random number generator function that doesn't need an oracle to do their job: https://gist.github.com/alexvandesande/259b4ffb581493ec0a1c

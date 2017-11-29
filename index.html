@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="favicon.ico">
+
+    <title>Ethereum Coin Flip Game: The best ethereum coin flip game of the world!</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="node_modules/bootstrap/dist/css/bootstrap.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="css/coinflip.css" rel="stylesheet">
+	
+	<!-- Cryptocoins icons -->
+	<link href="node_modules/cryptocoins-icons/webfont/cryptocoins.css" rel="stylesheet">
+	
+	<!-- Font awesome -->
+	<link rel="stylesheet" href="node_modules/font-awesome/css/font-awesome.min.css">
+	
+	<!-- Ethereum -->
+	<script src="node_modules/web3/dist/web3.min.js"></script>
+	
+	<!-- Slim -->
+	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+	
+	
+  </head>
+
+  <body>
+
+    <nav class="navbar navbar-toggleable-md navbar-inverse fixed-top bg-inverse">
+      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <a class="navbar-brand" href="#">Coin Flip</a>
+
+      <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+          </li>
+		  <!--
+          <li class="nav-item">
+            <a class="nav-link" href="#">Link</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link disabled" href="#">Disabled</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="http://example.com" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Dropdown</a>
+            <div class="dropdown-menu" aria-labelledby="dropdown01">
+              <a class="dropdown-item" href="#">Action</a>
+              <a class="dropdown-item" href="#">Another action</a>
+              <a class="dropdown-item" href="#">Something else here</a>
+            </div>
+          </li>
+		  -->
+        </ul>
+		<!--
+        <form class="form-inline my-2 my-lg-0">
+          <input class="form-control mr-sm-2" type="text" placeholder="Search">
+          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+        </form>
+		-->
+		<a href="#" onClick="soundOnOff();" id="soundSwitch"><i class="fa fa-2x fa-volume-up soundSwitch" aria-hidden="true"></i></a>
+      </div>
+    </nav>
+
+    <!-- Main jumbotron for a primary marketing message or call to action -->
+    <div class="jumbotron">
+      <div class="container">
+	  
+	    <p class="text-center" style="margin: 0;"><i class="cc ETH-alt" title="ETH" style="font-size: 6rem;"></i></p>
+	  
+        <h1 class="display-3 text-center">Ethereum Coin Flip Game!</h1>
+        <p class="text-center">The best ethereum coin flip game of the world</p>
+		
+		<div class="row">
+          <div class="col-md-6 offset-md-3">
+		    <div class="input-group input-group-lg">
+              <span class="input-group-addon">Amount to Bet:</i></span>
+              <input type="number" class="form-control" required step=".001" min="0.001" max="1" value="0.001" id="amount" placeholder="Ethers to bet..." aria-label="Ethers to bet...">
+			  <!-- <input type="number" class="form-control" required min="0" id="amount" placeholder="WEIs to bet..." aria-label="WEIs to bet..."> -->
+              <span class="input-group-btn">
+                <button class="btn btn-success" type="button" id="submit">Play!</button>
+              </span>
+            </div>
+          </div>
+        </div>
+		
+		<p class="text-center"><img id="loader" src="https://loading.io/spinners/double-ring/lg.double-ring-spinner.gif"></p>
+		
+		<div id="alert" class="alert alert-dismissible fade show" role="alert">
+		  <button type="button" class="close" onclick="$('#alert').hide()">
+            <span aria-hidden="true">&times;</span>
+          </button>
+          <span id="alertText"><strong>Well done!</strong> You successfully read this important alert message.</span>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="container">
+	
+	  <div class="row">
+        <div class="col-md-12">
+		
+		  <h2 class="text-center">Last 10 Played Games</h2>
+		  
+		  <p>&nbsp;</p>
+          
+		  <div class="table-responsive">
+	        <table id="lastPlayedGamesTable" class="table table-striped">
+              <thead>
+                <tr>
+				  <th>Address</th>
+                  <th>Block Number</th>
+                  <th>Block Timestamp</th>
+				  <th>Bet</th>
+				  <th>Prize</th>
+			  	  <th>Winner</th>
+                </tr>
+              </thead>
+              <tbody>
+              </tbody>
+            </table>
+		  </div>
+		  
+	    </div>
+	  </div>
+	  
+	  <p>&nbsp;</p>
+
+      <div class="row">
+        <div class="col-md-4">
+          <h2>The Game</h2>
+          <p>Game is simple, you bet an ether amount and the coin flips, if the coin goes head you'll earn the 190% of your bet. If the coin goes tails you'll loose your bet.</p>
+          <!--<p><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p> -->
+        </div>
+        <div class="col-md-4">
+          <h2>Requirements</h2>
+          <p>You must install <a href="https://metamask.io/" target="_blank">Metamask</a> in your browser (<a href="https://chrome.google.com/webstore/detail/metamask/nkbihfbeogaeaoehlefnkodbefgpgknn" target="_blank">Get Chrome version here!</a>) in order to play the game. Currently we are testing in Rinkeby ethereum network, so be sure to select it when setup Metamask.</p>
+          <!-- <p><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p> -->
+       </div>
+        <div class="col-md-4">
+          <h2>No funds?</h2>
+          <p>No problem! We are testing this DApp in the Ethereum Rinkeby testnet. So you can just create and address in Metamask, go to <a href="https://faucet.rinkeby.io" target="_blank">faucet.rinkeby.io</a> and follow the instructions to get free ethers from the thin air! ;-)</p>
+          <!-- <p><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p> -->
+        </div>
+      </div>
+
+      <hr>
+
+      <footer>
+        <p>&copy; 2017 <a href="https://www.quequiereshacer.es" target="_blank">Quequiereshacer.es</a> / <span id="contractInfo"></span></p>
+      </footer>
+    </div> <!-- /container -->
+
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
+    <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+    <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="node_modules/bootstrap/dist/js/ie10-viewport-bug-workaround.js"></script>
+	<script src="js/script.js"></script>
+	
+  </body>
+</html>

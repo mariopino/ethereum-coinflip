@@ -1,0 +1,17 @@
+{
+  "name": "CoinFlip",
+  "version": "1.0.0",
+  "description": "Ethereum Flip Coin Game",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Mario Pino Uceda",
+  "license": "GPL-3.0",
+  "dependencies": {
+    "bootstrap": "^4.0.0-alpha.6",
+    "cryptocoins-icons": "^2.6.0",
+    "font-awesome": "^4.7.0",
+    "web3": "github:ethereum/web3.js"
+  }
+}

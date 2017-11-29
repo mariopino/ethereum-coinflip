@@ -1,0 +1,33 @@
+/**
+ * Coin Flip main css file
+ * 
+ * Author: Mario Pino Uceda <info@quequiereshacer.es>
+ * 
+ */
+
+/* Move down content because we have a fixed navbar that is 50px tall */
+body {
+  padding-top: 2rem;
+}
+
+#loader {
+    width: 150px;
+    display: none;
+}
+
+#alert {
+    display: none;
+}
+
+#lastPlayedGamesTable .win td {
+	color: green;
+}
+
+#lastPlayedGamesTable .loose td {
+	color: red;
+}
+
+.soundSwitch {
+	color: #fff;
+	padding: 3px 0 3px 0;
+}

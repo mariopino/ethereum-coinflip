@@ -73,11 +73,11 @@ CoinFlipEvent.watch(function(error, result) {
     if (result.args.winner) {
       $("#alert").removeClass( "alert-danger" ).addClass( "alert-success" );
       var Sound = new Audio(winSound);
-	  console.log('You win!');
+	  console.log('Congratulations, you won!');
     } else {
       $("#alert").removeClass( "alert-success" ).addClass( "alert-danger" );
       var Sound = new Audio(loseSound);
-	  console.log('You lose!');
+	  console.log('I\'m sorry, you\'ve lost!');
     }
     
     $("#alertText").html(result.args._msg);

@@ -44,16 +44,13 @@ To run your own ethereum coin flip instance:
 * Implement tabs, rename 'Last Played Games' to 'Last 10 Bets' and implement 'Wins' table.
 * Rewrite UpdateGamesTable() function to manage all table updates.
 * Change loading spinner, provide better gaming experience.
-* New website sections: About.
-* When metamask is not installed provide a link in the alert message, be more polite
-and offer a link to reload the page.
+* New website sections.
 * Try to explain the game better in jumbotron.
-* Document source code.
-* Improve console logs.
 
 
 ### Smart Contract:
 
-* Test the new maximum bet variable.
+* Test new maximum bet variable.
 * If a user send more than the maximum bet, play the max bet and return the rest to the user.
 * Try this random number generator function that doesn't need an oracle to do their job: https://gist.github.com/alexvandesande/259b4ffb581493ec0a1c
+* Implement Oraclize

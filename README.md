@@ -30,7 +30,7 @@ To run your own ethereum coin flip instance:
 
 1. Publish the solidity smart contract using Ethereum Wallet / Mist or use your favorite method and take note of the contract address. You must deposit funds to the contract, either at publish time or using the contract function depositFunds(). This is required because contract must have funds to pay the prize if the firsts clients win.
 
-2. Edit js/script.js and replace the address of the contract.
+2. Edit js/coinflip.js and in the header replace the address of the contract.
 
 3. Upload DApp files to a webserver, a static files web server is enought. You can also run it in local filesystem if you want.
 

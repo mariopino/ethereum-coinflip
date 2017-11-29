@@ -61,7 +61,7 @@ CoinFlipEvent.watch(function(error, result) {
     //console.log('Status Event Fired!');
     //console.log(result);
     
-	// Avoid process a already processed Status Event
+    // Avoid process a already processed Status Event
     if (processedBlocks.lastIndexOf(result.blockNumber) != -1) return;
     
     UpdateGamesTable();

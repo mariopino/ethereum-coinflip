@@ -12,16 +12,12 @@ Game is simple, you bet an ether amount and the coin flips, if the coin goes hea
 
 # How to play
 
-You must install Metamask in your browser (Get Chrome version here!) in order to play the game. Currently we are testing in Rinkeby ethereum network, so be sure to select it when setup Metamask.
+You must install [Metamask](https://metamask.io/) in your browser in order to play the game. Currently we are testing in [Rinkeby ethereum test network](https://rinkeby.etherscan.io/), so be sure to select it when setup Metamask.
 
 # No funds to play?
 
-This DApp is running in Rinkeby Ethereum testnet. So you can just create a Rinkeby account in Metamask, go to faucet.rinkeby.io and follow the instructions to get free ethers from the thin air and play the game! ;-)
+This DApp is running in Rinkeby Ethereum testnet. So you can just create a Rinkeby account in Metamask, go to [faucet.rinkeby.io](faucet.rinkeby.io) and follow the instructions to get free ethers from the thin air and play the game! ;-)
 
 # How it works
 
 Currently, we use the current block timestamp to simulate the coin flip. Odd timestamp equals to Heads and even timestamp equals to Tails. If the timestamp of your transaction is an odd number, you'll get the 190% of your bet, in the other case, if the timestamp is even you lose your bet.
-
-# Demo
-
-http://coinflip.quequiereshacer.es/

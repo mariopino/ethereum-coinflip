@@ -1,14 +1,14 @@
 /**
  * CoinFlip
  * 
- * Juego de casino para apostar a cara o cruz. Se usa el timestamp del bloque de la blockchain
- * para simular un número random entre 0 y 1. Si el timestamp del bloque es un número par el
- * usuario gana el 190% del dinero invertido, si es un número impar pierde los ethers jugados.
+ * Casino game to bet on heads or tails. Blockchain timestamp is used
+ * to simulate a random number between 0 and 1. If the timestamp of the block is an even number the
+ * player wins 190% of the tokens bet, if it is an odd number the player loses all tokens bet.
  *
- * Al desplegar el contrato es necesario transferirle fondos para que pueda pagar el premio si
- * el usuario gana.
+ * When deploying the contract it is necessary to transfer funds to it so that it can pay the prize if
+ * user wins.
  *
- * Versión modificada para interfaz web
+ * Modified version for web interface
  * 
 **/
 
@@ -18,8 +18,8 @@ contract CoinFlip {
     address owner;
     uint payPercentage = 90;
 	
-	// Maximum amount to bet in WEIs
-	uint public MaxAmountToBet = 200000000000000000; // = 0.2 Ether
+	// Maximum amount to bet in wei
+	uint public MaxAmountToBet = 200000000000000000; // = 0.2 Quai
 	
 	struct Game {
 		address addr;
@@ -61,7 +61,7 @@ contract CoinFlip {
 			if ((block.timestamp % 2) == 0) {
 				
 				if (this.balance < (msg.value * ((100 + payPercentage) / 100))) {
-					// No tenemos suficientes fondos para pagar el premio, así que transferimos todo lo que tenemos
+					// Message sent if balance of prize pool is less than prize won
 					msg.sender.transfer(this.balance);
 					Status('Congratulations, you win! Sorry, we didn\'t have enought money, we will deposit everything we have!', msg.sender, msg.value, true);
 					

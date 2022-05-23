@@ -1,8 +1,6 @@
-![Screenshot](https://raw.githubusercontent.com/mariopino/ethereum-coinflip/master/screenshot.png)
+# Quai Network coin flip game
 
-# Ethereum coin flip game
-
-Coin Flip Ethereum DApp, a simple casino game based on Ethereum blockchain. Includes Ethereum Smart Contract written in Solidity language (CoinFlip.sol) and a bootstrap 4 / web3.js based web interface to interact with it.
+Coin Flip Quai Network DApp, a simple casino game based on the Quai Network blockchain. Includes EVM Smart Contract written in Solidity language (CoinFlip.sol) and a bootstrap 4 / web3.js based web interface to interact with it.
 
 ## Demo
 
@@ -10,15 +8,15 @@ http://coinflip.quequiereshacer.es/
 
 ## The game
 
-Game is simple, you bet an ether amount and the coin flips, if the coin goes head you'll earn the 190% of your bet. If the coin goes tails you'll loose your bet.
+The game is simple, you bet an amount of Quai and flip the coin. If the coin lands on heads you'll earn the 190% of your bet. If the coin lands on tails you'll loose your bet.
 
 ## How to play
 
-You must install [Metamask](https://metamask.io/) in your browser in order to play the game. Currently we are testing in [Rinkeby ethereum test network](https://rinkeby.etherscan.io/), so be sure to select it when setup Metamask.
+You must install [The Quai Network Wallet]() in your browser in order to play the game. Currently we are testing in the Iron Age Testnet
 
 ## No funds to play?
 
-This DApp is running in Rinkeby Ethereum testnet. So you can just create a Rinkeby account in Metamask, go to [faucet.rinkeby.io](faucet.rinkeby.io) and follow the instructions to get free ethers from the thin air and play the game! ;-)
+This DApp is running on the Quai Network Iron Age testnet. So you can just create a Quai Network wallet and get free Quai from the faucet and play for free!
 
 ## How it works
 

@@ -28,9 +28,9 @@ if (typeof web3 !== 'undefined') {
   window.web3 = new Web3(web3.currentProvider);
 } else {
   // Shows an error in UI and console if no web3 object is detected
-  console.log('Error! You must install Metamask in order to play the game!')  
+  console.log('Error! You must install the Quai Wallet in order to play the game!')  
   $("#alert").removeClass( "alert-success" ).addClass( "alert-danger" );
-  $("#alertText").html('Error! You must install <a href="https://metamask.io" target="_blank">Metamask</a> in order to play the game!');
+  $("#alertText").html('Error! You must install <a href="https://docs.quai.network/develop/quai-wallet" target="_blank">Quai Wallet</a> in order to play the game!');
   $("#alert").show(); 
   
 }
